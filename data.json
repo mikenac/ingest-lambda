@@ -1,0 +1,20 @@
+{
+    "header": {
+        "eventId": "b8240643-8f22-4cb8-8640-fe17d43f30ae",
+        "tenantId": "80e9f2ba-b31e-4226-a1b4-72c8322d69b6",
+        "eventTimestamp": "2022-06-22T13:30:00.323Z",
+        "eventType": "FoobarEvent"
+    },
+    "body": {
+       "oldData": {
+            "Patient": {
+                "Name": "Bob"
+            }
+       },
+       "newData": {
+            "Patient": {
+                "Name": "Larry"
+            }
+       }
+    }
+}

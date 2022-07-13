@@ -2,3 +2,4 @@ pylint
 python-dateutil
 boto3
 morph
+python-dateutil

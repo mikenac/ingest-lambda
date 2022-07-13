@@ -5,9 +5,10 @@ import json
 import base64
 import copy
 from datetime import datetime
+import re
 from dateutil import tz
 import morph
-import re
+
 
 
 def get_key_tail(input_str):
@@ -16,7 +17,7 @@ def get_key_tail(input_str):
     if last_dot != -1:
         return input_str[last_dot + 1:]
     return input
-    
+
 def get_key_parent(input_str):
     """ Get the parent to the last part of the key """
     last_dot = input_str.rfind(".")
@@ -36,7 +37,6 @@ def utc_to_local(input_date, time_zone, date_format= '%Y-%m-%dT%H:%M:%S.%f%z'):
     """ Convert a utc string date into a local string date"""
     input_as_timestamp = datetime.strptime(input_date, date_format).replace(tzinfo=tz.gettz("UTC"))
     return input_as_timestamp.astimezone(time_zone).strftime(date_format)
-
 
 def transform_data(data: Any): # crap but thats what json.loads returns
     """ Add a local date for input UTC dates """
